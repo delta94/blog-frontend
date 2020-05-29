@@ -9,7 +9,7 @@ export default function Header() {
                 </ul>
                 <ul>
                     <li>
-                        <a href="/">link to something</a>
+                        <a href="/home">Home</a>
                     </li>
                     <li>
                         <a href="/">link to something else</a>

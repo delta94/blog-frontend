@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Title from './Title';
 import Content from './Content';
+import postService from '../../services/postService';
 
 export default function Blog() {
     const [blog, setBlog] = useState('');
 
     useEffect(() => {
         const fetchBlog = async () => {
-            const fetchData = await fetch(
-                'http://localhost:4000/api/post/5ecfe968cc3fc4071c0081ea',
-            );
-            const blog = await fetchData.json();
+            const request = await fetch('http://localhost:4000/api/post/5ed03e62ada4320cdc839c3c');
+            const blog = await request.json();
             setBlog(blog);
         };
         fetchBlog();
