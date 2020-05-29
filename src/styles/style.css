@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightblue;
+  height: 8vh;
+}
+
+header nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+header nav .left-list {
+  width: 10%;
+}
+
+header nav .right-list {
+  width: 30%;
+}
+
+h1 {
+  text-align: center;
+  color: green;
+}
+
+.home-article-links {
+  text-decoration: none;
+  color: black;
+}
+
+.home-section {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.home-section .post-details h2 {
+  padding: 0.5em 0;
+}
+
+.home-section .post-details .date {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.home-section .post-details .last-edit {
+  font-size: 0.6rem;
+  color: gray;
+}
+
+.post {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.post .post-details h2 {
+  padding: 0.7em 0;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+.post .post-details .date {
+  font-weight: bold;
+}
+
+.post .post-details .last-edit {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.post .content {
+  padding: 2em 0;
+}
+/*# sourceMappingURL=style.css.map */
