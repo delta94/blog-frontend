@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Content({ text }) {
-    return <article>{text}</article>;
+    return <article className="content">{text}</article>;
 }

@@ -4,10 +4,10 @@ export default function Header() {
     return (
         <header>
             <nav>
-                <ul>
+                <ul className="left-list">
                     <li>Something here</li>
                 </ul>
-                <ul>
+                <ul className="right-list">
                     <li>
                         <a href="/home">Home</a>
                     </li>

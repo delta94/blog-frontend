@@ -3,19 +3,19 @@ import Title from './Title';
 import Content from './Content';
 import postService from '../../services/postService';
 
-export default function Blog() {
+export default function Post({ match }) {
     const [blog, setBlog] = useState('');
-
+    console.log(match);
     useEffect(() => {
         const fetchBlog = async () => {
-            const request = await fetch('http://localhost:4000/api/post/5ed03e62ada4320cdc839c3c');
+            const request = await fetch(`http://localhost:4000/api/post/${match.params.id}`);
             const blog = await request.json();
             setBlog(blog);
         };
         fetchBlog();
     }, []);
     return (
-        <section>
+        <section className="post">
             <Title
                 title={blog.title}
                 timestamp={blog.timestamp}

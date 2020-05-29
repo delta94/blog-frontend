@@ -1,16 +1,16 @@
 import React from 'react';
-import './App.css';
+import './styles/style.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Blog from './components/Blog/Blog';
+import Post from './components/Blog/Post';
 import Home from './components/Home/Home';
 
 function App() {
     return (
         <Router>
             <Header />
-            <Route path="/post/:id" component={Blog} />
-            <Route path="/home" component={Home} />
+            <Route path="/home" exact component={Home} />
+            <Route path="/post/:id" exact component={Post} />
         </Router>
     );
 }
