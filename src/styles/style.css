@@ -3,6 +3,12 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  line-height: 1.5;
+}
+
+body {
+  background-color: whitesmoke;
+  padding-bottom: 3em;
 }
 
 header nav {
@@ -15,8 +21,8 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: lightblue;
-  height: 8vh;
+  background-color: #1d3557;
+  padding: 1em 0;
 }
 
 header nav ul {
@@ -26,24 +32,34 @@ header nav ul {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  color: #f1faee;
 }
 
 header nav ul li a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  color: #f1faee;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
 }
 
 header nav .left-list {
-  width: 10%;
+  width: 20%;
+  min-width: 100px;
 }
 
 header nav .right-list {
-  width: 30%;
+  width: 20%;
+  min-width: 200px;
 }
 
 h1 {
   text-align: center;
   color: green;
+  padding: 1em;
+  letter-spacing: 1px;
 }
 
 .home-article-links {
@@ -53,11 +69,42 @@ h1 {
 
 .home-section {
   margin: 0 auto;
-  width: 50%;
+  width: 90%;
+  min-width: 350px;
+  display: -ms-grid;
+  display: grid;
+  gap: 50px;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.home-section .post-details {
+  background-color: #457b9d;
+  padding: 1em;
+  min-height: 400px;
+  color: #f1faee;
+  -webkit-box-shadow: 0 3px 8px #a8dadc;
+          box-shadow: 0 3px 8px #a8dadc;
+  border-radius: 5px;
 }
 
 .home-section .post-details h2 {
-  padding: 0.5em 0;
+  padding: 0.6em 0;
+  -webkit-box-shadow: 0 2px 6px #333;
+          box-shadow: 0 2px 6px #333;
+  color: #333;
+  background: #a8dadc;
+  text-indent: 10px;
+}
+
+.home-section .post-details img {
+  min-width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0 2px 6px #a8dadc;
+          box-shadow: 0 2px 6px #a8dadc;
+  margin: 2em 0;
 }
 
 .home-section .post-details .date {
@@ -66,19 +113,22 @@ h1 {
 }
 
 .home-section .post-details .last-edit {
-  font-size: 0.6rem;
-  color: gray;
+  font-size: 0.8rem;
+  color: #333;
 }
 
 .post {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
 .post .post-details h2 {
-  padding: 0.7em 0;
+  margin-top: 2em;
+  padding: 0.5em 0;
   font-size: 1.7rem;
   line-height: 1.5;
+  border-bottom: 2px solid #1d3557;
+  color: #1d3557;
 }
 
 .post .post-details .date {
@@ -92,5 +142,77 @@ h1 {
 
 .post .content {
   padding: 2em 0;
+}
+
+.post > div {
+  border-top: 2px solid #1d3557;
+  padding: 1em 0;
+}
+
+.post > div h4 {
+  padding: 1em 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+.post > div .comment {
+  padding: 1em 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+.post > div .comment:last-child {
+  border-bottom: 1px solid #1d3557;
+}
+
+.post > div .comment h5 {
+  margin: 0.5em 0;
+}
+
+.post > div .comment .text {
+  font-size: 1.1rem;
+}
+
+.post > div .comment .date {
+  text-align: end;
+  font-size: 0.8rem;
+}
+
+.post > div .add-comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em 0;
+}
+
+.post > div .add-comment p {
+  font-weight: bold;
+}
+
+.post > div .add-comment textarea,
+.post > div .add-comment input {
+  resize: none;
+  border: 1px solid #1d3557;
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+
+.post > div .add-comment input {
+  border: none;
+  border-bottom: 2px solid #1d3557;
+  background-color: whitesmoke;
+  padding: 0.5em 0;
+}
+
+.post > div .add-comment button {
+  background-color: #1d3557;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 1em 0;
+  color: #f1faee;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

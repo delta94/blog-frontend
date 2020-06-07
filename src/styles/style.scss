@@ -1,35 +1,56 @@
+$dark-blue: #1d3557;
+$medium-blue: #457b9d;
+$light-blue: #a8dadc;
+$white: #f1faee;
+$red: #e63946;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.5;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 3em;
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightblue;
-    height: 8vh;
+    background-color: $dark-blue;
+    padding: 1em 0;
     ul {
         list-style: none;
         display: flex;
         justify-content: space-around;
+        color: $white;
         li a {
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            color: $white;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
     .left-list {
-        width: 10%;
+        width: 20%;
+        min-width: 100px;
     }
     .right-list {
-        width: 30%;
+        width: 20%;
+        min-width: 200px;
     }
 }
 
 h1 {
     text-align: center;
     color: green;
+    padding: 1em;
+    letter-spacing: 1px;
 }
 
 .home-article-links {
@@ -39,30 +60,54 @@ h1 {
 
 .home-section {
     margin: 0 auto;
-    width: 50%;
+    width: 90%;
+    min-width: 350px;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     .post-details {
+        background-color: $medium-blue;
+        padding: 1em;
+        min-height: 400px;
+        color: $white;
+        box-shadow: 0 3px 8px $light-blue;
+        border-radius: 5px;
         h2 {
-            padding: 0.5em 0;
+            padding: 0.6em 0;
+            box-shadow: 0 2px 6px #333;
+            color: #333;
+            background: $light-blue;
+            text-indent: 10px;
+        }
+        img {
+            min-width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            box-shadow: 0 2px 6px $light-blue;
+            margin: 2em 0;
         }
         .date {
             font-size: 0.8rem;
             font-weight: bold;
         }
         .last-edit {
-            font-size: 0.6rem;
-            color: gray;
+            font-size: 0.8rem;
+            color: #333;
         }
     }
 }
 
 .post {
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
     .post-details {
         h2 {
-            padding: 0.7em 0;
+            margin-top: 2em;
+            padding: 0.5em 0;
             font-size: 1.7rem;
             line-height: 1.5;
+            border-bottom: 2px solid $dark-blue;
+            color: $dark-blue;
         }
         .date {
             font-weight: bold;
@@ -74,5 +119,61 @@ h1 {
     }
     .content {
         padding: 2em 0;
+    }
+
+    & > div {
+        border-top: 2px solid $dark-blue;
+        padding: 1em 0;
+        h4 {
+            padding: 1em 0;
+            border-bottom: 1px solid rgb(220, 220, 220);
+        }
+        .comment {
+            padding: 1em 0;
+            border-bottom: 1px solid rgb(220, 220, 220);
+            &:last-child {
+                border-bottom: 1px solid $dark-blue;
+            }
+            h5 {
+                margin: 0.5em 0;
+            }
+            .text {
+                font-size: 1.1rem;
+            }
+            .date {
+                text-align: end;
+                font-size: 0.8rem;
+            }
+        }
+        .add-comment {
+            display: flex;
+            flex-direction: column;
+            padding: 1em 0;
+            p {
+                font-weight: bold;
+            }
+            textarea,
+            input {
+                resize: none;
+                border: 1px solid $dark-blue;
+                padding: 0.5em;
+                margin: 0.5em 0;
+            }
+            input {
+                border: none;
+                border-bottom: 2px solid $dark-blue;
+                background-color: rgb(245, 245, 245);
+                padding: 0.5em 0;
+            }
+            button {
+                background-color: $dark-blue;
+                border: none;
+                cursor: pointer;
+                padding: 0.5em;
+                margin: 1em 0;
+                color: $white;
+                font-weight: bold;
+            }
+        }
     }
 }
