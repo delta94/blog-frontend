@@ -23,6 +23,7 @@ export default function Home() {
                             title={post.title}
                             timestamp={post.timestamp}
                             last_edit={post.last_edit || `This post hasn't been edited yet`}
+                            image={post.image}
                         />
                     </Link>
                 ))}
