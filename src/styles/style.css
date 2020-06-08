@@ -55,11 +55,41 @@ header nav .right-list {
   min-width: 200px;
 }
 
-h1 {
+.page-h1 {
   text-align: center;
-  color: green;
+  color: #1d3557;
   padding: 1em;
   letter-spacing: 1px;
+  position: relative;
+}
+
+.page-h1::before, .page-h1::after {
+  content: '';
+  border: 1px solid #1d3557;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 38%;
+}
+
+@media screen and (max-width: 1100px) {
+  .page-h1::before, .page-h1::after {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page-h1::before, .page-h1::after {
+    width: 25%;
+  }
+}
+
+.page-h1::after {
+  right: 3%;
+}
+
+.page-h1::before {
+  left: 3%;
 }
 
 .home-article-links {
@@ -68,7 +98,7 @@ h1 {
 }
 
 .home-section {
-  margin: 0 auto;
+  margin: 3em auto;
   width: 90%;
   min-width: 350px;
   display: -ms-grid;
@@ -80,7 +110,7 @@ h1 {
 
 .home-section .post-details {
   background-color: #457b9d;
-  padding: 1em;
+  padding: 2em 1em;
   min-height: 400px;
   color: #f1faee;
   -webkit-box-shadow: 0 3px 8px #a8dadc;
@@ -95,6 +125,7 @@ h1 {
   color: #333;
   background: #a8dadc;
   text-indent: 10px;
+  border-radius: 5px;
 }
 
 .home-section .post-details img {
@@ -117,6 +148,10 @@ h1 {
   color: #333;
 }
 
+.hide {
+  display: none;
+}
+
 .post {
   width: 50%;
   margin: 0 auto;
@@ -131,6 +166,17 @@ h1 {
   color: #1d3557;
 }
 
+.post .post-details .post-image {
+  max-height: 400px;
+  margin: 2em auto;
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0 0 8px #a8dadc;
+          box-shadow: 0 0 8px #a8dadc;
+}
+
 .post .post-details .date {
   font-weight: bold;
 }
@@ -142,6 +188,16 @@ h1 {
 
 .post .content {
   padding: 2em 0;
+  border-top: 1px solid gainsboro;
+}
+
+.post .content p {
+  margin: 0.4em 0;
+}
+
+.post .content ul {
+  margin: 2.5em 0;
+  list-style-position: inside;
 }
 
 .post > div {
@@ -185,6 +241,7 @@ h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1em 0;
+  margin-top: 3em;
 }
 
 .post > div .add-comment p {
@@ -196,7 +253,7 @@ h1 {
   resize: none;
   border: 1px solid #1d3557;
   padding: 0.5em;
-  margin: 0.5em 0;
+  margin: 0.8em 0;
 }
 
 .post > div .add-comment input {
@@ -214,5 +271,58 @@ h1 {
   margin: 1em 0;
   color: #f1faee;
   font-weight: bold;
+}
+
+.loader {
+  -webkit-animation: rightCircle 2s linear infinite;
+          animation: rightCircle 2s linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 100px auto 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  border: 3px solid #1d3557;
+  border-radius: 50%;
+  width: 40px;
+  display: inline-block;
+  height: 40px;
+}
+
+.loader.inactive {
+  display: none;
+}
+
+@-webkit-keyframes rightCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rightCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */

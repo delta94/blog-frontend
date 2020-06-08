@@ -5,7 +5,7 @@ export default function Title({ title, image, timestamp, last_edit }) {
         <article className="post-details">
             <h2>{title}</h2>
             <figure>
-                <img src={image} alt="" />
+                <img src={image} alt="" className="post-image" />
                 <figcaption>
                     <p>
                         <span className="date">Posted on: {timestamp}</span> |

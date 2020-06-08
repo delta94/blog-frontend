@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Title from './Title';
 import Content from './Content';
 import Comment from './Comment';
+import Loader from '../Home/Loader';
 
 export default function Post({ match }) {
     const [blog, setBlog] = useState({});
     const [comments, setComments] = useState([]);
     const [commenter, setCommenter] = useState('');
     const [comment, setComment] = useState('');
+    const [showLoader, setShowLoader] = useState(true);
+    const [showPost, setShowPost] = useState(false);
 
     useEffect(() => {
         const fetchBlog = async () => {
@@ -22,6 +25,8 @@ export default function Post({ match }) {
                 `http://localhost:4000/api/post/${match.params.id}/comments`,
             );
             const comments = await response.json();
+            setShowLoader(false);
+            setShowPost(true);
             setComments(comments);
         };
         fetchComments();
@@ -42,46 +47,50 @@ export default function Post({ match }) {
     };
 
     return (
-        <section className="post">
-            <Title
-                title={blog.title}
-                timestamp={blog.timestamp}
-                last_edit={blog.last_edit || `This post hasn't been edited yet`}
-            />
-            <Content text={blog.text} />
-            <div>
-                <h4>Comments</h4>
-                {comments.length ? (
-                    comments.map((comment) => (
-                        <Comment
-                            username={comment.username}
-                            text={comment.text}
-                            date={comment.timestamp}
-                            key={comment._id}
+        <>
+            <Loader showLoader={showLoader} />
+            <section className={showPost ? 'post' : 'hide'}>
+                <Title
+                    title={blog.title}
+                    timestamp={blog.timestamp}
+                    last_edit={blog.last_edit || `This post hasn't been edited yet`}
+                    image={blog.image}
+                />
+                <Content text={blog.text} />
+                <div>
+                    <h4>Comments</h4>
+                    {comments.length ? (
+                        comments.map((comment) => (
+                            <Comment
+                                username={comment.username}
+                                text={comment.text}
+                                date={comment.timestamp}
+                                key={comment._id}
+                            />
+                        ))
+                    ) : (
+                        <p>This post has no comments yet.</p>
+                    )}
+                    <form className="add-comment" onSubmit={(e) => postComment(e)}>
+                        <p>Leave a comment</p>
+                        <input
+                            type="text"
+                            onChange={(e) => setCommenter(e.target.value)}
+                            value={commenter}
+                            placeholder="Name"
                         />
-                    ))
-                ) : (
-                    <p>This post has no comments yet.</p>
-                )}
-                <form className="add-comment" onSubmit={(e) => postComment(e)}>
-                    <p>Leave a comment</p>
-                    <input
-                        type="text"
-                        onChange={(e) => setCommenter(e.target.value)}
-                        value={commenter}
-                        placeholder="Name"
-                    />
-                    <textarea
-                        name="comment"
-                        cols="30"
-                        rows="5"
-                        onChange={(e) => setComment(e.target.value)}
-                        defaultValue={comment}
-                        placeholder="Your comment..."
-                    ></textarea>
-                    <button>Comment</button>
-                </form>
-            </div>
-        </section>
+                        <textarea
+                            name="comment"
+                            cols="30"
+                            rows="5"
+                            onChange={(e) => setComment(e.target.value)}
+                            value={comment}
+                            placeholder="Your comment..."
+                        ></textarea>
+                        <button>Comment</button>
+                    </form>
+                </div>
+            </section>
+        </>
     );
 }

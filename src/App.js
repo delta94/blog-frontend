@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Post from './components/Blog/Post';
 import Home from './components/Home/Home';
 import ErrorPage from './components/Error/ErrorPage';
+import About from './components/About/About';
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
             <Header />
             <Switch>
                 <Route path="/home" exact component={Home} />
-                <Route path="/about" exact component={Home} />
+                <Route path="/about" exact component={About} />
                 <Route path="/post/:id" exact component={Post} />
                 <Route path="/" component={ErrorPage} />
             </Switch>
