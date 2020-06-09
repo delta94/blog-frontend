@@ -109,33 +109,33 @@ header nav .right-list {
 }
 
 .home-section .post-details {
-  background-color: #457b9d;
-  padding: 2em 1em;
+  background-color: #1d3557;
+  padding: 2em;
   min-height: 400px;
   color: #f1faee;
-  -webkit-box-shadow: 0 3px 8px #a8dadc;
-          box-shadow: 0 3px 8px #a8dadc;
+  -webkit-box-shadow: 0 3px 8px #cedfdf;
+          box-shadow: 0 3px 8px #cedfdf;
   border-radius: 5px;
+  height: 100%;
 }
 
 .home-section .post-details h2 {
-  padding: 0.6em 0;
-  -webkit-box-shadow: 0 2px 6px #333;
-          box-shadow: 0 2px 6px #333;
-  color: #333;
-  background: #a8dadc;
-  text-indent: 10px;
+  padding: 0.6em;
+  -webkit-box-shadow: 0 2px 8px #333;
+          box-shadow: 0 2px 8px #333;
+  color: #1d3557;
+  background: #cedfdf;
   border-radius: 5px;
 }
 
 .home-section .post-details img {
   min-width: 100%;
-  max-height: 200px;
+  max-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 0 2px 6px #a8dadc;
-          box-shadow: 0 2px 6px #a8dadc;
+  border: 2px solid #457b9d;
   margin: 2em 0;
+  border-radius: 3px;
 }
 
 .home-section .post-details .date {
@@ -145,7 +145,6 @@ header nav .right-list {
 
 .home-section .post-details .last-edit {
   font-size: 0.8rem;
-  color: #333;
 }
 
 .hide {
@@ -173,8 +172,8 @@ header nav .right-list {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 0 0 8px #a8dadc;
-          box-shadow: 0 0 8px #a8dadc;
+  -webkit-box-shadow: 0 0 8px #cedfdf;
+          box-shadow: 0 0 8px #cedfdf;
 }
 
 .post .post-details .date {
@@ -285,7 +284,7 @@ header nav .right-list {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 100px auto 0 auto;
+  margin: 200px auto 0 auto;
   width: 100px;
   height: 100px;
 }
@@ -298,6 +297,10 @@ header nav .right-list {
   width: 40px;
   display: inline-block;
   height: 40px;
+  -webkit-animation: changeSize 2s linear infinite;
+          animation: changeSize 2s linear infinite;
+  margin: 3px;
+  background-color: #1d3557;
 }
 
 .loader.inactive {
@@ -323,6 +326,36 @@ header nav .right-list {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes changeSize {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes changeSize {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 /*# sourceMappingURL=style.css.map */

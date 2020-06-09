@@ -1,6 +1,6 @@
 $dark-blue: #1d3557;
 $medium-blue: #457b9d;
-$light-blue: #a8dadc;
+$light-blue: #cedfdf;
 $white: #f1faee;
 $red: #e63946;
 
@@ -88,26 +88,27 @@ header nav {
     gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     .post-details {
-        background-color: $medium-blue;
-        padding: 2em 1em;
+        background-color: $dark-blue;
+        padding: 2em;
         min-height: 400px;
         color: $white;
         box-shadow: 0 3px 8px $light-blue;
         border-radius: 5px;
+        height: 100%;
         h2 {
-            padding: 0.6em 0;
-            box-shadow: 0 2px 6px #333;
-            color: #333;
+            padding: 0.6em;
+            box-shadow: 0 2px 8px #333;
+            color: $dark-blue;
             background: $light-blue;
-            text-indent: 10px;
             border-radius: 5px;
         }
         img {
             min-width: 100%;
-            max-height: 200px;
+            max-height: 250px;
             object-fit: cover;
-            box-shadow: 0 2px 6px $light-blue;
+            border: 2px solid $medium-blue;
             margin: 2em 0;
+            border-radius: 3px;
         }
         .date {
             font-size: 0.8rem;
@@ -115,7 +116,6 @@ header nav {
         }
         .last-edit {
             font-size: 0.8rem;
-            color: #333;
         }
     }
 }
@@ -227,7 +227,7 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 100px auto 0 auto;
+    margin: 200px auto 0 auto;
     width: 100px;
     height: 100px;
 }
@@ -240,6 +240,9 @@ header nav {
     width: 40px;
     display: inline-block;
     height: 40px;
+    animation: changeSize 2s linear infinite;
+    margin: 3px;
+    background-color: $dark-blue;
 }
 
 .loader.inactive {
@@ -252,5 +255,18 @@ header nav {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes changeSize {
+    0% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(1.2);
     }
 }
