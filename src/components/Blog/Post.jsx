@@ -11,12 +11,16 @@ export default function Post({ match }) {
     const [comment, setComment] = useState('');
     const [showLoader, setShowLoader] = useState(true);
     const [showPost, setShowPost] = useState(false);
+    const [contentAsHTML, setContentAsHTML] = useState('');
 
     useEffect(() => {
         const fetchBlog = async () => {
             const response = await fetch(`http://localhost:4000/api/post/${match.params.id}`);
             const blog = await response.json();
-            setBlog(blog);
+            setBlog(blog.foundPost);
+            setContentAsHTML(blog.contentAsHTML);
+            setShowLoader(false);
+            setShowPost(true);
         };
         fetchBlog();
 
@@ -25,8 +29,6 @@ export default function Post({ match }) {
                 `http://localhost:4000/api/post/${match.params.id}/comments`,
             );
             const comments = await response.json();
-            setShowLoader(false);
-            setShowPost(true);
             setComments(comments);
         };
         fetchComments();
@@ -56,7 +58,7 @@ export default function Post({ match }) {
                     last_edit={blog.last_edit || `This post hasn't been edited yet`}
                     image={blog.image}
                 />
-                <Content text={blog.text} />
+                <Content text={contentAsHTML} />
                 <div>
                     <h4>Comments</h4>
                     {comments.length ? (
