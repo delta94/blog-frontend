@@ -9,7 +9,7 @@ import About from './components/About/About';
 
 function App() {
     return (
-        <Router>
+        <Router basename="/blog-frontend">
             <Header />
             <Switch>
                 <Route path="/home" exact component={Home} />
