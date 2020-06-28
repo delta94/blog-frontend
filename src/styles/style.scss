@@ -9,6 +9,7 @@ $red: #e63946;
     padding: 0;
     box-sizing: border-box;
     line-height: 1.5;
+    font-family: 'Kalam', cursive;
 }
 
 body {
@@ -22,6 +23,7 @@ header nav {
     align-items: center;
     background-color: $dark-blue;
     padding: 1em 0;
+    box-shadow: 0 0 6px $dark-blue;
     ul {
         list-style: none;
         display: flex;
@@ -31,9 +33,6 @@ header nav {
             text-decoration: none;
             font-size: 1.3rem;
             color: $white;
-            &:hover {
-                text-decoration: underline;
-            }
         }
     }
     .left-list {
@@ -43,6 +42,22 @@ header nav {
     .right-list {
         width: 20%;
         min-width: 200px;
+        li {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 3px;
+                left: 0;
+                width: 0%;
+                transition: width 200ms ease-in;
+                height: 2px;
+                background: $white;
+            }
+            &:hover:after {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -84,15 +99,18 @@ header nav {
     margin: 3em auto;
     width: 90%;
     min-width: 350px;
+    opacity: 0;
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 0.5s;
     .post-details {
         background-color: $dark-blue;
         padding: 2em;
         min-height: 400px;
         color: $white;
-        box-shadow: 0 3px 8px $light-blue;
+        box-shadow: 0 3px 8px $dark-blue;
         border-radius: 5px;
         height: 100%;
         h2 {
@@ -153,7 +171,7 @@ header nav {
         }
     }
     .content {
-        padding: 2em 0;
+        padding: 2em 0 6em 0;
         border-top: 1px solid rgb(220, 220, 220);
         p {
             margin: 0.4em 0;
@@ -166,7 +184,7 @@ header nav {
 
     & > div {
         border-top: 2px solid $dark-blue;
-        padding: 1em 0;
+        padding: 3em 0;
         h4 {
             padding: 1em 0;
             border-bottom: 1px solid rgb(220, 220, 220);
@@ -181,11 +199,12 @@ header nav {
                 margin: 0.5em 0;
             }
             .text {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             .date {
                 text-align: end;
                 font-size: 0.8rem;
+                color: rgb(165, 164, 164);
             }
         }
         .add-comment {
@@ -260,13 +279,22 @@ header nav {
 
 @keyframes changeSize {
     0% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     50% {
         transform: scale(0.6);
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

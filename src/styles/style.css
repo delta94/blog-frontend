@@ -4,6 +4,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   line-height: 1.5;
+  font-family: 'Kalam', cursive;
 }
 
 body {
@@ -23,6 +24,8 @@ header nav {
           align-items: center;
   background-color: #1d3557;
   padding: 1em 0;
+  -webkit-box-shadow: 0 0 6px #1d3557;
+          box-shadow: 0 0 6px #1d3557;
 }
 
 header nav ul {
@@ -41,10 +44,6 @@ header nav ul li a {
   color: #f1faee;
 }
 
-header nav ul li a:hover {
-  text-decoration: underline;
-}
-
 header nav .left-list {
   width: 20%;
   min-width: 100px;
@@ -53,6 +52,26 @@ header nav .left-list {
 header nav .right-list {
   width: 20%;
   min-width: 200px;
+}
+
+header nav .right-list li {
+  position: relative;
+}
+
+header nav .right-list li:after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 0%;
+  -webkit-transition: width 200ms ease-in;
+  transition: width 200ms ease-in;
+  height: 2px;
+  background: #f1faee;
+}
+
+header nav .right-list li:hover:after {
+  width: 100%;
 }
 
 .page-h1 {
@@ -101,11 +120,16 @@ header nav .right-list {
   margin: 3em auto;
   width: 90%;
   min-width: 350px;
+  opacity: 0;
   display: -ms-grid;
   display: grid;
   gap: 50px;
   -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -webkit-animation: fadeIn 1s ease-in forwards;
+          animation: fadeIn 1s ease-in forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .home-section .post-details {
@@ -113,8 +137,8 @@ header nav .right-list {
   padding: 2em;
   min-height: 400px;
   color: #f1faee;
-  -webkit-box-shadow: 0 3px 8px #cedfdf;
-          box-shadow: 0 3px 8px #cedfdf;
+  -webkit-box-shadow: 0 3px 8px #1d3557;
+          box-shadow: 0 3px 8px #1d3557;
   border-radius: 5px;
   height: 100%;
 }
@@ -186,7 +210,7 @@ header nav .right-list {
 }
 
 .post .content {
-  padding: 2em 0;
+  padding: 2em 0 6em 0;
   border-top: 1px solid gainsboro;
 }
 
@@ -201,7 +225,7 @@ header nav .right-list {
 
 .post > div {
   border-top: 2px solid #1d3557;
-  padding: 1em 0;
+  padding: 3em 0;
 }
 
 .post > div h4 {
@@ -223,12 +247,13 @@ header nav .right-list {
 }
 
 .post > div .comment .text {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .post > div .comment .date {
   text-align: end;
   font-size: 0.8rem;
+  color: #a5a4a4;
 }
 
 .post > div .add-comment {
@@ -331,31 +356,49 @@ header nav .right-list {
 
 @-webkit-keyframes changeSize {
   0% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   50% {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
   100% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
 @keyframes changeSize {
   0% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   50% {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
   100% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */
