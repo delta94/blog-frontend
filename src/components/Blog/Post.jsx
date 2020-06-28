@@ -15,7 +15,9 @@ export default function Post({ match }) {
 
     useEffect(() => {
         const fetchBlog = async () => {
-            const response = await fetch(`http://localhost:4000/api/post/${match.params.id}`);
+            const response = await fetch(
+                `https://julio22b-blog-api-1.glitch.me/api/post/${match.params.id}`,
+            );
             const blog = await response.json();
             setBlog(blog.foundPost);
             setContentAsHTML(blog.contentAsHTML);
@@ -26,7 +28,7 @@ export default function Post({ match }) {
 
         const fetchComments = async () => {
             const response = await fetch(
-                `http://localhost:4000/api/post/${match.params.id}/comments`,
+                `https://julio22b-blog-api-1.glitch.me/api/post/${match.params.id}/comments`,
             );
             const comments = await response.json();
             setComments(comments);
@@ -36,12 +38,15 @@ export default function Post({ match }) {
 
     const postComment = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:4000/api/post/${match.params.id}/comments`, {
-            method: 'post',
-            mode: 'cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ comment, commenter }),
-        });
+        const response = await fetch(
+            `https://julio22b-blog-api-1.glitch.me/api/post/${match.params.id}/comments`,
+            {
+                method: 'post',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ comment, commenter }),
+            },
+        );
         const data = await response.json();
         setComment('');
         setCommenter('');

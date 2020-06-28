@@ -9,7 +9,7 @@ export default function Home() {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const request = await fetch('http://localhost:4000/api/posts');
+            const request = await fetch('https://julio22b-blog-api-1.glitch.me/api/posts');
             const posts = await request.json();
             setShowLoader(false);
             setAllPosts(posts);

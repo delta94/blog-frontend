@@ -126,8 +126,8 @@ header nav .right-list li:hover:after {
   gap: 50px;
   -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  -webkit-animation: fadeIn 1s ease-in forwards;
-          animation: fadeIn 1s ease-in forwards;
+  -webkit-animation: fadeIn 0.3s ease-in forwards;
+          animation: fadeIn 0.3s ease-in forwards;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }

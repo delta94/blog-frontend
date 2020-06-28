@@ -103,7 +103,7 @@ header nav {
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    animation: fadeIn 1s ease-in forwards;
+    animation: fadeIn 0.3s ease-in forwards;
     animation-delay: 0.5s;
     .post-details {
         background-color: $dark-blue;

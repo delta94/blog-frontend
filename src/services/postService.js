@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:4000/api/';
+const baseUrl = 'https://julio22b-blog-api-1.glitch.me/api/';
 
 const getAll = async () => {
     const request = await fetch(`${baseUrl}/posts`);
