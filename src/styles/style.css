@@ -123,7 +123,7 @@ header nav .right-list li:hover:after {
   opacity: 0;
   display: -ms-grid;
   display: grid;
-  gap: 50px;
+  gap: 100px;
   -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   -webkit-animation: fadeIn 0.3s ease-in forwards;
