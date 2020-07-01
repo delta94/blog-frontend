@@ -92,6 +92,7 @@ export default function Post({ match }) {
                             rows="5"
                             onChange={(e) => setComment(e.target.value)}
                             value={comment}
+                            required
                             placeholder="Your comment..."
                         ></textarea>
                         <button>Comment</button>

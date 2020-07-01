@@ -1,7 +1,7 @@
-$dark-blue: #1d3557;
-$medium-blue: #457b9d;
-$light-blue: #cedfdf;
-$white: #f1faee;
+$dark-blue: #2530a7;
+$medium-blue: #365bd4;
+$light-blue: #edf3fd;
+$white: #e2e9df;
 $red: #e63946;
 
 * {
@@ -13,7 +13,7 @@ $red: #e63946;
 }
 
 body {
-    background-color: rgb(245, 245, 245);
+    background-color: #d9e2f1;
     padding-bottom: 3em;
 }
 
@@ -64,7 +64,7 @@ header nav {
 .page-h1 {
     text-align: center;
     color: $dark-blue;
-    padding: 1em;
+    padding: 1.5em;
     letter-spacing: 1px;
     position: relative;
     &::before,
@@ -106,33 +106,34 @@ header nav {
     animation: fadeIn 0.3s ease-in forwards;
     animation-delay: 0.5s;
     .post-details {
-        background-color: $dark-blue;
+        background-color: $light-blue;
         padding: 2em;
         min-height: 400px;
         color: $white;
-        box-shadow: 0 3px 8px $dark-blue;
+        box-shadow: 0 0 40px -25px $dark-blue;
         border-radius: 5px;
         height: 100%;
         h2 {
             padding: 0.6em;
-            box-shadow: 0 2px 8px #333;
-            color: $dark-blue;
-            background: $light-blue;
+            box-shadow: 0 0px 40px -25px $dark-blue;
+            color: $light-blue;
+            background: $dark-blue;
             border-radius: 5px;
         }
         img {
             min-width: 100%;
             max-height: 250px;
             object-fit: cover;
-            border: 2px solid $medium-blue;
             margin: 2em 0;
             border-radius: 3px;
         }
         .date {
             font-size: 0.8rem;
             font-weight: bold;
+            color: $dark-blue;
         }
         .last-edit {
+            color: $dark-blue;
             font-size: 0.8rem;
         }
     }
@@ -187,11 +188,10 @@ header nav {
         padding: 3em 0;
         h4 {
             padding: 1em 0;
-            border-bottom: 1px solid rgb(220, 220, 220);
         }
         .comment {
             padding: 1em 0;
-            border-bottom: 1px solid rgb(220, 220, 220);
+            border-bottom: 1px solid #2530a73a;
             &:last-child {
                 border-bottom: 1px solid $dark-blue;
             }
@@ -221,12 +221,12 @@ header nav {
                 border: 1px solid $dark-blue;
                 padding: 0.5em;
                 margin: 0.8em 0;
+                background-color: #d9e2f1;
             }
             input {
                 border: none;
                 border-bottom: 2px solid $dark-blue;
-                background-color: rgb(245, 245, 245);
-                padding: 0.5em 0;
+                padding: 0.5em;
             }
             button {
                 background-color: $dark-blue;
@@ -236,6 +236,9 @@ header nav {
                 margin: 1em 0;
                 color: $white;
                 font-weight: bold;
+                &:active {
+                    transform: scale(0.98);
+                }
             }
         }
     }
@@ -279,14 +282,14 @@ header nav {
 
 @keyframes changeSize {
     0% {
-        transform: scale(1.1);
+        transform: scale(1);
     }
 
     50% {
         transform: scale(0.6);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1);
     }
 }
 

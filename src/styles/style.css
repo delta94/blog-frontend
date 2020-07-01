@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: #d9e2f1;
   padding-bottom: 3em;
 }
 
@@ -22,10 +22,10 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #1d3557;
+  background-color: #2530a7;
   padding: 1em 0;
-  -webkit-box-shadow: 0 0 6px #1d3557;
-          box-shadow: 0 0 6px #1d3557;
+  -webkit-box-shadow: 0 0 6px #2530a7;
+          box-shadow: 0 0 6px #2530a7;
 }
 
 header nav ul {
@@ -35,13 +35,13 @@ header nav ul {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  color: #f1faee;
+  color: #e2e9df;
 }
 
 header nav ul li a {
   text-decoration: none;
   font-size: 1.3rem;
-  color: #f1faee;
+  color: #e2e9df;
 }
 
 header nav .left-list {
@@ -67,7 +67,7 @@ header nav .right-list li:after {
   -webkit-transition: width 200ms ease-in;
   transition: width 200ms ease-in;
   height: 2px;
-  background: #f1faee;
+  background: #e2e9df;
 }
 
 header nav .right-list li:hover:after {
@@ -76,8 +76,8 @@ header nav .right-list li:hover:after {
 
 .page-h1 {
   text-align: center;
-  color: #1d3557;
-  padding: 1em;
+  color: #2530a7;
+  padding: 1.5em;
   letter-spacing: 1px;
   position: relative;
 }
@@ -133,22 +133,22 @@ header nav .right-list li:hover:after {
 }
 
 .home-section .post-details {
-  background-color: #1d3557;
+  background-color: #edf3fd;
   padding: 2em;
   min-height: 400px;
-  color: #f1faee;
-  -webkit-box-shadow: 0 3px 8px #1d3557;
-          box-shadow: 0 3px 8px #1d3557;
+  color: #e2e9df;
+  -webkit-box-shadow: 0 0 40px -25px #2530a7;
+          box-shadow: 0 0 40px -25px #2530a7;
   border-radius: 5px;
   height: 100%;
 }
 
 .home-section .post-details h2 {
   padding: 0.6em;
-  -webkit-box-shadow: 0 2px 8px #333;
-          box-shadow: 0 2px 8px #333;
-  color: #1d3557;
-  background: #cedfdf;
+  -webkit-box-shadow: 0 0px 40px -25px #2530a7;
+          box-shadow: 0 0px 40px -25px #2530a7;
+  color: #edf3fd;
+  background: #2530a7;
   border-radius: 5px;
 }
 
@@ -157,7 +157,6 @@ header nav .right-list li:hover:after {
   max-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 2px solid #457b9d;
   margin: 2em 0;
   border-radius: 3px;
 }
@@ -165,9 +164,11 @@ header nav .right-list li:hover:after {
 .home-section .post-details .date {
   font-size: 0.8rem;
   font-weight: bold;
+  color: #2530a7;
 }
 
 .home-section .post-details .last-edit {
+  color: #2530a7;
   font-size: 0.8rem;
 }
 
@@ -185,8 +186,8 @@ header nav .right-list li:hover:after {
   padding: 0.5em 0;
   font-size: 1.7rem;
   line-height: 1.5;
-  border-bottom: 2px solid #1d3557;
-  color: #1d3557;
+  border-bottom: 2px solid #2530a7;
+  color: #2530a7;
 }
 
 .post .post-details .post-image {
@@ -196,8 +197,8 @@ header nav .right-list li:hover:after {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 0 0 8px #cedfdf;
-          box-shadow: 0 0 8px #cedfdf;
+  -webkit-box-shadow: 0 0 8px #edf3fd;
+          box-shadow: 0 0 8px #edf3fd;
 }
 
 .post .post-details .date {
@@ -224,22 +225,21 @@ header nav .right-list li:hover:after {
 }
 
 .post > div {
-  border-top: 2px solid #1d3557;
+  border-top: 2px solid #2530a7;
   padding: 3em 0;
 }
 
 .post > div h4 {
   padding: 1em 0;
-  border-bottom: 1px solid gainsboro;
 }
 
 .post > div .comment {
   padding: 1em 0;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid #2530a73a;
 }
 
 .post > div .comment:last-child {
-  border-bottom: 1px solid #1d3557;
+  border-bottom: 1px solid #2530a7;
 }
 
 .post > div .comment h5 {
@@ -275,26 +275,31 @@ header nav .right-list li:hover:after {
 .post > div .add-comment textarea,
 .post > div .add-comment input {
   resize: none;
-  border: 1px solid #1d3557;
+  border: 1px solid #2530a7;
   padding: 0.5em;
   margin: 0.8em 0;
+  background-color: #d9e2f1;
 }
 
 .post > div .add-comment input {
   border: none;
-  border-bottom: 2px solid #1d3557;
-  background-color: whitesmoke;
-  padding: 0.5em 0;
+  border-bottom: 2px solid #2530a7;
+  padding: 0.5em;
 }
 
 .post > div .add-comment button {
-  background-color: #1d3557;
+  background-color: #2530a7;
   border: none;
   cursor: pointer;
   padding: 0.5em;
   margin: 1em 0;
-  color: #f1faee;
+  color: #e2e9df;
   font-weight: bold;
+}
+
+.post > div .add-comment button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 .loader {
@@ -325,7 +330,7 @@ header nav .right-list li:hover:after {
   -webkit-animation: changeSize 2s linear infinite;
           animation: changeSize 2s linear infinite;
   margin: 3px;
-  background-color: #1d3557;
+  background-color: #2530a7;
 }
 
 .loader.inactive {
@@ -356,31 +361,31 @@ header nav .right-list li:hover:after {
 
 @-webkit-keyframes changeSize {
   0% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   50% {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
   100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes changeSize {
   0% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   50% {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
   100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 

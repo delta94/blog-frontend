@@ -6,7 +6,7 @@ export default function Header() {
         <header>
             <nav>
                 <ul className="left-list">
-                    <li>?</li>
+                    <li></li>
                 </ul>
                 <ul className="right-list">
                     <li>
