@@ -26,7 +26,7 @@ You also need to run the backend locally by following the steps in the [backend 
 
 ## Pictures
 
-<img src="https://github.com/julio22b/blog-frontend/blob/master/src/images/blog.png" width="650"/>
+<img src="https://github.com/julio22b/blog-frontend/blob/master/src/services/blog.png" width="650"/>
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
